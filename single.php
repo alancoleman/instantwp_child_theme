@@ -1,81 +1,50 @@
 <?php
 /**
- * Index Template
+ * Single Posts Template
  *
  *
- * @file           index.php
+ * @file           single.php
  * @package        InstantWP 
  * @author         Brad Williams 
  * @copyright      2011 - 2014 GentsThemes
  * @license        license.txt
  * @version        Release: 3.2.0
- * @link           http://codex.wordpress.org/Theme_Development#Index_.28index.php.29
+ * @link           http://codex.wordpress.org/Theme_Development#Single_Post_.28single.php.29
  * @since          available since Release 1.0
  */
 ?>
-   <?php get_header(); ?>
-      <?php global $more; $more = 0; ?>
+<?php get_header(); ?>
 
-<?php if ( has_post_thumbnail()) { ?>
- <?php $background = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' ); ?>
-  <div id="blogwrap" style="background-image: url('<?php echo $background[0]; ?>');">
-    <?php } else { ?>
+ <?php                           
+   $images = rwmb_meta( 'wtf_blogimg', 'type=image' );
+   if ($images) {
+    ?>                    
+         <?php foreach ( $images as $image ) { 
+          $bgimg = $image['full_url'];
+          echo "<div id='blogwrap' style='background-image: url($bgimg);'>";  
+        } 
+     } else { ?>
        <div id="blogwrap">
     <?php } ?>
       <div class="container">
       <div class="row">
         <div class="col-lg-6 col-lg-offset-3">
-          <?php 
-          echo '<h1>' . get_bloginfo( 'description', 'display' ) . '</h1>';
-          /*
-          if( rwmb_meta( 'wtf_blog_title' ) !== '' ) { ?>
-            <?php echo rwmb_meta( 'wtf_blog_title' ); ?>
-            <?php } 
-            */
-            ?> 
+          <h1><?php the_title(); ?></h1>
         </div>
       </div><! --/row -->
       </div> <!-- /container -->
   </div><! --/workwrap -->
 
-<!-- *****************************************************************************************************************
-   BLOG CONTENT
-   ***************************************************************************************************************** -->
 
   <div class="container">
     <div class="row mt mb">
       <div class="col-lg-8 col-lg-offset-2">
-		<div id="intro-text">
-        <?php
-        displaypostcontent( 1387, 1399 );
-        ?>
-        </div>
-        <hr />
-        <?php
-        if ( get_query_var('paged') !== 0 ) {
-			echo '<h2 class="page-title">Blog page ' . get_query_var('paged') . '</h2>';
-		} else {
-			echo '<h2 class="page-title">Blog</h2>';
-		}
-        
-        global $wp_query;
-        if ( get_query_var('paged') ) {
-          $paged = get_query_var('paged');
-        } elseif ( get_query_var('page') ) {
-          $paged = get_query_var('page');
-        } else {
-          $paged = 1;
-        }
-        query_posts( array( 'post_type' => 'post', 'paged' => $paged ) );
-        
-        ?>   
+
         <?php if (have_posts()) : ?>
 
         <?php while (have_posts()) : the_post(); ?>
-        
-        
 
-              <article class="blog-wrap" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+        <article class="blog-wrap" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
           
           <div class="blog-media">
           
@@ -92,15 +61,14 @@
             <?php if ( has_post_thumbnail()) : ?>
             <div class="author-wrap">
               <span class="inside">
-                 <?php 
-                   echo get_avatar( $id_or_email, $size = '100' ); 
-                   ?>
+                <?php if (function_exists('get_avatar')) { echo get_avatar( get_the_author_meta('email'), '100' ); }?>
               </span>
             </div>
              <?php endif; ?>
                 <h3 class="general-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php printf(__('Permanent Link to %s', 'gents'), the_title_attribute('echo=0')); ?>"><?php the_title(); ?></a></h3>
               
-              <?php if( bi_option('enable_disable_meta','1') == '1') {    
+                  
+             <?php if( bi_option('enable_disable_meta','1') == '1') {    
               // Display post meta info
               gents_post_meta(); 
                } ?>
@@ -110,9 +78,18 @@
              
           
           <div class="post-desc">
-          
-            <?php the_excerpt(__('(more...)')); ?>
+            <?php the_content(); ?>
           </div>
+
+              <?php if ( get_the_author_meta('description') != '' ) : ?>
+
+            <div class="author_box clearfix">
+              <?php if (function_exists('get_avatar')) { echo '<div class="alignleft">' . get_avatar( get_the_author_meta('email'), '100' ) . '</div>'; }?>
+              <h4><?php _e('About','responsive'); ?> <?php the_author_posts_link(); ?></h4>
+              <p><?php the_author_meta('description') ?></p>
+            </div><!-- end of author_box clearfix --> 
+
+          <?php endif; // no description, no author's meta ?>
 
             <?php custom_link_pages(array(
               'before' => '<nav class="pagination"><ul>' . __(''),
@@ -125,23 +102,32 @@
                             ); ?>
 
                            
-                        </section><!-- end of .post-entry -->     
+                        </section><!-- end of .post-entry -->   
+
+                            <footer class="article-footer">
+                            <?php if( bi_option('enable_disable_tags','1') == '1') {?>
+
+                            <div class="post-data">
+                              <?php the_tags(__('Tagged with:', 'responsive') . ' ', ' ', '<br />'); ?>  
+                            </div><!-- end of .post-data --> 
+                            <?php } ?>            
+
+                            <div class="post-edit"><?php edit_post_link(__('Edit', 'responsive')); ?></div>  
+                          </footer>      
 
                         </div> <!--blog-media -->    
                         
                       </article><!-- end of #post-<?php the_ID(); ?> -->
 
-                        <hr>
+                        <?php comments_template( '', true ); ?>
 
                       <?php endwhile; ?> 
 
                       <?php if (  $wp_query->max_num_pages > 1 ) : ?>
-                      <nav>
-                        <ul class="pager">
-                         <li class="previous"><?php next_posts_link( __( '&#8249; Older posts', 'responsive' ) ); ?></li>
-                         <li class="next"><?php previous_posts_link( __( 'Newer posts &#8250;', 'responsive' ) ); ?></li>
-                       </ul><!-- end of .navigation -->
-                     </nav>
+                      <nav class="navigation">
+                       <div class="previous"><?php next_posts_link( __( '&#8249; Older posts', 'responsive' ) ); ?></div>
+                       <div class="next"><?php previous_posts_link( __( 'Newer posts &#8250;', 'responsive' ) ); ?></div>
+                     </nav><!-- end of .navigation -->
                    <?php endif; ?>
 
                  <?php else : ?>
@@ -162,9 +148,10 @@
 
              <?php endif; ?>  
 
-          </div>
+           </div>
 
     </div><! --/row -->
   </div><! --/container -->
+
 
            <?php get_footer(); ?>

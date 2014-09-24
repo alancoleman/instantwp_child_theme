@@ -29,9 +29,9 @@ See: http://codex.wordpress.org/Child_Themes
    General styles
    ========================================================================== */
  
-.navbar-default {
+.navbar-default, ::selection {
 	background-color: #F27A24;
-	opacity: 0.9;
+	opacity: 0.95;
 }
 
 .navbar-default .navbar-brand {
@@ -40,21 +40,60 @@ See: http://codex.wordpress.org/Child_Themes
 
 .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
 	color: #ffffff;
-	border-bottom: 4px solid #ffffff
+	border-bottom: 0;
+	font-style:italic;
 }
 
-.navbar-default .navbar-nav > li > a {
+
+.navbar-default .navbar-nav > li > a, .dropdown-menu>li>a, ::selection, .navbar-default .navbar-nav>.open>a {
 	color: #ffffff;
+}
+
+@media (max-width: 767px) {
+	.navbar-default .navbar-nav .open .dropdown-menu>li>a {
+	color: #fff;
+	}
 }
 
 a {
 	color:#F27A24;
 }
 
-.navbar-default .navbar-nav > li > a:hover, a:hover {
+.navbar-default .navbar-nav > li > a:hover, a:hover, .dropdown-menu>li>a:hover, .navbar-default .navbar-brand:hover {
 	color:#803500;
 	text-decoration:none;
 }
+
+.navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:hover, .dropdown-menu, .dropdown-menu>li>a:hover {
+	background-color: #e57322;
+}
+
+.dropdown-menu {
+	border:0;
+	border-radius:0;
+	padding:0;
+	font-size:16px;	
+}
+
+#intro-text p {
+	font-size:20px;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+	background-color: #ffffff;
+	opacity: 1;
+}
+
+.navbar-default .navbar-toggle {
+	border-radius:0;
+	border-color:#ffffff;
+}
+
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus  {
+	background-color:#803500;
+}
+
+
 /* ==========================================================================
    Wrap Sections
    ========================================================================== */
@@ -76,7 +115,11 @@ a {
 }
 */
 
-#blogwrap h1 {
+#aboutwrap h1, #blogwrap h1 {
 	padding-top: 0px;
 	font-size: 40px;
+}
+#aboutwrap h1 {
+	padding-top: 10px;
+	color: #ffffff;
 }
