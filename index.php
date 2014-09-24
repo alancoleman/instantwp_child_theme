@@ -25,9 +25,14 @@
       <div class="container">
       <div class="row">
         <div class="col-lg-6 col-lg-offset-3">
-          <?php if( rwmb_meta( 'wtf_blog_title' ) !== '' ) { ?>
+          <?php 
+          echo '<h1>' . get_bloginfo( 'description', 'display' ) . '</h1>';
+          /*
+          if( rwmb_meta( 'wtf_blog_title' ) !== '' ) { ?>
             <?php echo rwmb_meta( 'wtf_blog_title' ); ?>
-            <?php } ?> 
+            <?php } 
+            */
+            ?> 
         </div>
       </div><! --/row -->
       </div> <!-- /container -->
@@ -42,6 +47,8 @@
       <div class="col-lg-8 col-lg-offset-2">
 
         <?php
+        displaypostcontent( 1387, 1399 );
+        
         global $wp_query;
         if ( get_query_var('paged') ) {
           $paged = get_query_var('paged');
