@@ -43,7 +43,7 @@
    ***************************************************************************************************************** -->
 
   <div class="container">
-    <div class="row centered mt mb">
+    <div class="row mt mb">
       <div class="col-lg-8 col-lg-offset-2">
 
         <?php
@@ -58,6 +58,7 @@
           $paged = 1;
         }
         query_posts( array( 'post_type' => 'post', 'paged' => $paged ) );
+        
         ?>   
         <?php if (have_posts()) : ?>
 
@@ -65,7 +66,7 @@
         
         
 
-              <article class="blog-wrap text-center" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+              <article class="blog-wrap" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
           
           <div class="blog-media">
           
@@ -100,7 +101,8 @@
              
           
           <div class="post-desc">
-            <?php the_content(); ?>
+          
+            <?php the_excerpt(__('(more...)')); ?>
           </div>
 
             <?php custom_link_pages(array(

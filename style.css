@@ -47,6 +47,14 @@ See: http://codex.wordpress.org/Child_Themes
 	color: #ffffff;
 }
 
+a {
+	color:#F27A24;
+}
+
+.navbar-default .navbar-nav > li > a:hover, a:hover {
+	color:#803500;
+	text-decoration:none;
+}
 /* ==========================================================================
    Wrap Sections
    ========================================================================== */
