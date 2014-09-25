@@ -50,7 +50,6 @@
         displaypostcontent( 1387, 1399 );
         ?>
         </div>
-        <hr />
         <?php
         if ( get_query_var('paged') !== 0 ) {
 			echo '<h2 class="page-title">Blog page ' . get_query_var('paged') . '</h2>';
