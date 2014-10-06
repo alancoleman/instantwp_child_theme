@@ -34,4 +34,22 @@ function displaypostcontent( $localpostid, $livepostid ) {
 	}
 }
 
+/*
+ *  Function to get the last part of a WordPress page url
+*/
+function getpageurl ( $permalink ) {
+	// Parse premalink
+	$parsed_url = parse_url( $permalink );
+	// Set variable to path part of parsed permalink
+	$parsed_url_path = $parsed_url['path'];
+	// If the last character of $parsed_url_path is a trailing slash
+	if ( $parsed_url_path[strlen( $parsed_url_path )-1] == '/') {
+		// Remove trailing slash
+		$parsed_url_path = substr( $parsed_url_path, 0, -1 );
+	}
+	// Explode remaining url into an array
+	$parsed_url_path_exp = explode( '/', $parsed_url_path );
+	// Return last element of array
+	return end($parsed_url_path_exp);
+}
 ?>

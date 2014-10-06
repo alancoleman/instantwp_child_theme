@@ -13,15 +13,20 @@
  * @since          available since Release 1.0
  */
 
-
-$url_endpoint = get_permalink();
-$url_endpoint = parse_url( $url_endpoint );
-var_dump($url_endpoint);
-$url_endpoint = $url_endpoint['path'];
-echo $url_endpoint;
-
+switch ( getpageurl( get_permalink() ) ) {
+	case 'about-alan-coleman':
+		$metadesc = 'Find out more about Web Developer Alan Coleman';
+		break;
+	case 'contact-alan-coleman':
+		$metadesc = 'How to get in contact Alan Coleman, about a web development project or just to say hello';
+		break;
+	case 'portfolio':
+		$metadesc = 'More about Alan Coleman\'s web development work and projects to date';
+		break;
+	default:
+		$metadesc = wp_title('&#124;', true, 'right');
+}
 ?>
-
 <!doctype html>
 <!--[if lt IE 7 ]> <html class="no-js ie6" <?php language_attributes(); ?>> <![endif]-->
 <!--[if IE 7 ]>    <html class="no-js ie7" <?php language_attributes(); ?>> <![endif]-->
@@ -33,6 +38,9 @@ echo $url_endpoint;
 <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 <meta name="title" content="<?php wp_title('&#124;', true, 'right'); ?><?php bloginfo('name'); ?>" >
+<?php if ($metadesc) { ?>
+<meta name="description" content="<?php echo $metadesc; ?>" >
+<?php } ?>
 <meta name="copyright" content="&copy; 2014 Alan Coleman" >
 <meta name="author" content="Alan Coleman" >
 <meta name="robots" content="INDEX,FOLLOW" >
