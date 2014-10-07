@@ -25,12 +25,16 @@ See: http://codex.wordpress.org/Child_Themes
    ========================================================================== */
 @import url("../instantwp/style.css");
 
+ hr {
+    border-top: 1px solid #90BDA7;
+}
+
 /* ==========================================================================
    General styles
    ========================================================================== */
  
 .navbar-default, ::selection {
-	background-color: #F27A24;
+	background-color: #00B55C;
 }
 
 .navbar-default .navbar-brand {
@@ -49,16 +53,16 @@ See: http://codex.wordpress.org/Child_Themes
 }
 
 a {
-	color:#F27A24;
+	color:#00B55C;
 }
 
 .navbar-default .navbar-nav > li > a:hover, a:hover, .dropdown-menu>li>a:hover, .navbar-default .navbar-brand:hover {
-	color:#803500;
+	color:#006634;
 	text-decoration:none;
 }
 
 .navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:hover, .dropdown-menu, .dropdown-menu>li>a:hover {
-	background-color: #e57322;
+	background-color: #90BDA7;
 }
 
 .dropdown-menu {
@@ -83,7 +87,7 @@ a {
 }
 
 #intro-text {
-	border-bottom: 5px solid #ccc;
+	border-bottom: 5px solid #90BDA7;
 	padding:0 0 20px 0;
 	margin:0 0 40px 0;
 }
