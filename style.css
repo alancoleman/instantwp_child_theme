@@ -113,25 +113,57 @@ a {
 /* ==========================================================================
    Wrap Sections
    ========================================================================== */
-/*
-#headerwrap {
-	background: url(images/back.jpg) no-repeat center top;
-}
-
-#workwrap {	
-	background: url(images/work.jpg) no-repeat center top;
-}
 
 #blogwrap {	
 	background: url(images/blog.jpg) no-repeat center top;
+	
+    -webkit-background-size: 100%;
+    -moz-background-size: 100%;
+    -o-background-size: 100%;
+    background-size: 100%;
+
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 #aboutwrap {	
 	background: url(images/about.jpg) no-repeat center top;
-}
-*/
 
-#aboutwrap h1, #blogwrap h1 {
+    -webkit-background-size: 100%;
+    -moz-background-size: 100%;
+    -o-background-size: 100%;
+    background-size: 100%;
+
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+#headerwrap {
+	background: url(images/blog.jpg) no-repeat center top;
+	margin-top: -70px;
+	padding-top: 250px;
+	text-align:center;
+	background-attachment: relative;
+	background-position: center center;
+	min-height: 650px;
+	width: 100%;
+	
+    -webkit-background-size: 100%;
+    -moz-background-size: 100%;
+    -o-background-size: 100%;
+    background-size: 100%;
+
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+#aboutwrap h1, #blogwrap h1, #headerwrap h1 {
 	padding-top: 0px;
 	font-size: 40px;
 }

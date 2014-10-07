@@ -26,7 +26,7 @@
      <?php elseif ( is_year() ) : ?>
      <?php printf( __( 'Yearly Archives: %s', 'responsive' ), '<span>' . get_the_date( 'Y' ) . '</span>' ); ?>
    <?php else : ?>
-   <?php _e( 'Blog Archives', 'responsive' ); ?>
+   <?php _e( single_cat_title( 'Blog Archives: ', $display ), 'responsive' ); ?>
  <?php endif; ?></h1>
 </div>
 </div><! --/row -->

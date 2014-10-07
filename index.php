@@ -75,7 +75,7 @@
         
 
               <article class="blog-wrap" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-          
+  
           <div class="blog-media">
           
           <section class="post-entry">
@@ -101,11 +101,11 @@
               
               <?php if( bi_option('enable_disable_meta','1') == '1') {    
               // Display post meta info
-              gents_post_meta(); 
+              gents_post_meta_clean(); 
                } ?>
               
               </header>
-
+ 
              
           
           <div class="post-desc">

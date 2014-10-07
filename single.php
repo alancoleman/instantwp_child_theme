@@ -70,7 +70,7 @@
                   
              <?php if( bi_option('enable_disable_meta','1') == '1') {    
               // Display post meta info
-              gents_post_meta(); 
+              gents_post_meta_post(); 
                } ?>
               
               </header>
