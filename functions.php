@@ -104,7 +104,7 @@ if ( ! function_exists( 'gents_post_meta_post' ) ) {
 		} ?>
 
 		 <div class="post-meta">
-              <p><span class="publish-on"><?php echo get_the_date(); ?> / By <?php echo get_the_author_link(); ?></span>
+              <p><span class="publish-on"><?php echo get_the_date(); ?></span> / By <span class="author"><?php echo get_the_author(); ?></span>
               <?php if(isset($fist_category)){ ?> 
               <span class="sep">/</span> Category: <a href="<?php echo $category_url; ?>"><?php echo $category_name; ?></a> 
               <?php } ?>
