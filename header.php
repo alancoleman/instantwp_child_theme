@@ -25,9 +25,7 @@ switch ( getpageurl( get_permalink() ) ) {
 		break;
 	case 'front-page-content-post':
 		$metadesc = 'Welcome to my web development site, the home of my blog and where you can find out about me and my web development work';
-			break;
-	default:
-		$metadesc = wp_title('&#124;', true, 'right');
+		break;
 }
 ?>
 <!doctype html>
