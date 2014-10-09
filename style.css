@@ -145,6 +145,22 @@ p {
     min-height: 550px;
 }
 
+#headerwrap {
+	background: url(images/blog.jpg) no-repeat center top;
+
+    -webkit-background-size: 100%;
+    -moz-background-size: 100%;
+    -o-background-size: 100%;
+    background-size: 100%;
+
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    
+     min-height: 550px;
+}
+
 #aboutwrap {	
 	background: url(images/blog.jpg) no-repeat center top;
 
