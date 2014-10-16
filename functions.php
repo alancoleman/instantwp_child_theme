@@ -104,7 +104,7 @@ if ( ! function_exists( 'gents_post_meta_post' ) ) {
 		} ?>
 
 		 <div class="post-meta">
-              <p><span class="publish-on"><time datetime="<?php echo date('Y-m-d', strtotime($post->post_date)); ?>" itemprop="datePublished"><?php echo get_the_date(); ?></time></span> / By <a rel="author" href="<?php echo get_site_url(); ?>/about-alan-coleman" itemprop="author"><span class="author"><?php echo get_the_author(); ?></span></a>
+              <p><span class="publish-on"><time datetime="<?php echo date('Y-m-d', strtotime($post->post_date)); ?>" itemprop="datePublished"><?php echo get_the_date(); ?></time></span> / By <a rel="author" href="https://plus.google.com/+AlanColeman" itemprop="author"><span class="author"><?php echo get_the_author(); ?></span></a>
               <?php if(isset($fist_category)){ ?> 
               <span class="sep">/</span> Category: <a href="<?php echo $category_url; ?>"><?php echo $category_name; ?></a> 
               <?php } ?>

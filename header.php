@@ -75,7 +75,7 @@ switch ( getpageurl( get_permalink() ) ) {
 </head>
 
 <body <?php body_class(); ?>>
-                 
+<a href="https://plus.google.com/+AlanColeman" rel="publisher"></a>                 
 <?php responsive_container(); // before container hook ?>
 
          
