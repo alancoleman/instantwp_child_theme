@@ -64,7 +64,7 @@
                         </section><!-- end of .post-entry -->
 
                         <footer class="article-footer">
-                            <?php if( bi_option('enable_disable_archive_tags','0') == '1') {?>
+                            <?php if( bi_option('enable_disable_archive_tags','1') == '0') {?>
                             <div class="post-data">
                                 <?php the_tags(__('Tagged with:', 'responsive') . ' ', ' ', '<br />'); ?>  
                             </div><!-- end of .post-data --> 
