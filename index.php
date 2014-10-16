@@ -42,7 +42,7 @@
    BLOG CONTENT
    ***************************************************************************************************************** -->
 
-  <div class="container">
+  <div class="container"  itemscope itemtype="http://schema.org/Blog">
     <div class="row mt mb">
       <div class="col-lg-8 col-lg-offset-2">
 		<div id="intro-text">
@@ -74,14 +74,14 @@
         
         
 
-              <article class="blog-wrap" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+              <article class="blog-wrap" id="post-<?php the_ID(); ?>" <?php post_class(); ?> itemscope itemtype="http://schema.org/BlogPosting">
   
           <div class="blog-media">
           
           <section class="post-entry">
             <?php if ( has_post_thumbnail()) : ?>
             <div class="he-wrap tpl2">
-            <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" >
+            <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
               <?php the_post_thumbnail(); ?>
             </div>
             </a>
@@ -97,7 +97,7 @@
               </span>
             </div>
              <?php endif; ?>
-                <h3 class="general-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php printf(__('Permanent Link to %s', 'gents'), the_title_attribute('echo=0')); ?>"><?php the_title(); ?></a></h3>
+                <h3 class="general-title" itemprop="name"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php printf(__('Permanent Link to %s', 'gents'), the_title_attribute('echo=0')); ?>" itemprop="url"><?php the_title(); ?></a></h3>
               
               <?php if( bi_option('enable_disable_meta','1') == '1') {    
               // Display post meta info
@@ -108,7 +108,7 @@
  
              
           
-          <div class="post-desc">
+          <div class="post-desc" itemprop="articleBody">
           
             <?php the_excerpt(__('(more...)')); ?>
           </div>
