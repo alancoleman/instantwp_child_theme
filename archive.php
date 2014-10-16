@@ -33,7 +33,7 @@
 </div> <!-- /container -->
 </div><! --/headerwrap -->
 
-<div class="container">
+<div class="container"   itemscope itemtype="http://schema.org/Blog">
     <div class="row mt mb">
       <div class="col-lg-8 col-lg-offset-2">
 
@@ -41,39 +41,16 @@
 
 <?php while (have_posts()) : the_post(); ?>
 
-    <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+    <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>  itemscope itemtype="http://schema.org/BlogPosting">
         <header>
-            <h3 class="ctitle"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php printf(__('Permanent Link to %s', 'responsive'), the_title_attribute('echo=0')); ?>"><?php the_title(); ?></a></h3>
+            <h3 class="ctitle" itemprop="name"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php printf(__('Permanent Link to %s', 'responsive'), the_title_attribute('echo=0')); ?>" itemprop="url"><?php the_title(); ?></a></h3>
+                <?php if( bi_option('enable_disable_meta','1') == '1') {    
+              // Display post meta info
+              gents_post_meta_clean(); 
+               } ?>
           </header>
 
-          <?php if( bi_option('enable_disable_meta','1') == '1') {?>
-          <section>
-            <p>
-            <?php 
-            printf( __( '<span class="csmall">Posted: %2$s </span> | <span class="csmall2"> %3$s </span>', 'responsive' ),'meta-prep meta-prep-author',
-              sprintf( '<a href="%1$s" title="%2$s" rel="bookmark">%3$s</a>',
-               get_permalink(),
-               esc_attr( get_the_time() ),
-               get_the_date()
-               ),
-              sprintf( '<span class="author vcard"><a class="url fn n" href="%1$s" title="%2$s">%3$s</a></span>',
-               get_author_posts_url( get_the_author_meta( 'ID' ) ),
-               sprintf( esc_attr__( 'View all posts by %s', 'responsive' ), get_the_author() ),
-               get_the_author()
-               )
-              );
-              ?>
-              <?php if ( comments_open() ) : ?>
-              <span class="comments-link">
-                <span class="mdash">&mdash;</span>
-                <?php comments_popup_link(__('No Comments <i class="icon-arrow-down"></i>', 'responsive'), __('1 Comment <i class="icon-arrow-down"></i>', 'responsive'), __('% Comments <i class="icon-arrow-down"></i>', 'responsive')); ?>
-              </span>
-            <?php endif; ?> 
-            </p>
-          </section>
-          <?php } ?>
-
-    <section class="post-entry">
+    <section class="post-entry"  itemprop="articleBody">
         <?php the_excerpt(); ?>
         <?php custom_link_pages(array(
             'before' => '<nav class="pagination"><ul>' . __(''),
@@ -87,7 +64,7 @@
                         </section><!-- end of .post-entry -->
 
                         <footer class="article-footer">
-                            <?php if( bi_option('enable_disable_archive_tags','1') == '1') {?>
+                            <?php if( bi_option('enable_disable_archive_tags','0') == '1') {?>
                             <div class="post-data">
                                 <?php the_tags(__('Tagged with:', 'responsive') . ' ', ' ', '<br />'); ?>  
                             </div><!-- end of .post-data --> 
