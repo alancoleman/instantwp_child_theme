@@ -44,7 +44,7 @@
 
         <?php while (have_posts()) : the_post(); ?>
 
-        <article class="blog-wrap" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+        <article class="blog-wrap" id="post-<?php the_ID(); ?>" <?php post_class(); ?> itemscope itemtype="http://schema.org/BlogPosting">
           
           <div class="blog-media">
           
@@ -65,7 +65,7 @@
               </span>
             </div>
              <?php endif; ?>
-                <h3 class="general-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php printf(__('Permanent Link to %s', 'gents'), the_title_attribute('echo=0')); ?>"><?php the_title(); ?></a></h3>
+                <h3 class="general-title" itemprop="name"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php printf(__('Permanent Link to %s', 'gents'), the_title_attribute('echo=0')); ?>" itemprop="url"><?php the_title(); ?></a></h3>
               
                   
              <?php if( bi_option('enable_disable_meta','1') == '1') {    
@@ -77,7 +77,7 @@
 
              
           
-          <div class="post-desc">
+          <div class="post-desc" itemprop="articleBody">
             <?php the_content(); ?>
           </div>
 
