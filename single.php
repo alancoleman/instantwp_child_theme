@@ -26,7 +26,7 @@
      } else { ?>
        <div id="blogwrap">
     <?php } ?>
-      <div class="container">
+      <div class="container" itemscope itemtype="http://schema.org/Blog">
       <div class="row">
         <div class="col-lg-6 col-lg-offset-3">
           <h1><?php the_title(); ?></h1>
