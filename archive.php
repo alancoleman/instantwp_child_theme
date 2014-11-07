@@ -43,7 +43,7 @@
 
     <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>  itemscope itemtype="http://schema.org/BlogPosting">
         <header>
-            <h3 class="ctitle" itemprop="name"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php printf(__('Permanent Link to %s', 'responsive'), the_title_attribute('echo=0')); ?>" itemprop="url"><?php the_title(); ?></a></h3>
+            <h3 class="ctitle entry-title" itemprop="name"><a href="<?php the_permalink() ?>" title="<?php the_title(); ?>" itemprop="url"><?php the_title(); ?></a></h3>
                 <?php if( bi_option('enable_disable_meta','1') == '1') {    
               // Display post meta info
               gents_post_meta_clean(); 

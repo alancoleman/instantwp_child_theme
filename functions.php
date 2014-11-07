@@ -64,7 +64,7 @@ if ( ! function_exists( 'gents_post_meta_clean' ) ) {
 ?>
 		 <div class="post-meta">
          	<p>
-            	<span class="publish-on"><time datetime="<?php echo date('Y-m-d', strtotime($post->post_date)); ?>" itemprop="datePublished"><?php echo get_the_date(); ?></time></span>  / By <a rel="author" href="https://plus.google.com/+AlanColeman" itemprop="author"><span class="author"><?php echo get_the_author(); ?></span></a>
+            	<span class="publish-on updated"><time datetime="<?php echo date('Y-m-d', strtotime($post->post_date)); ?>" itemprop="datePublished"><?php echo get_the_date(); ?></time></span>  / By <a rel="author" href="https://plus.google.com/+AlanColeman" itemprop="author"><?php echo get_the_author(); ?></a>
             </p>
          </div>
 		<?php
