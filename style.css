@@ -25,6 +25,8 @@ See: http://codex.wordpress.org/Child_Themes
    ========================================================================== */
 @import url("../instantwp/style.css");
 
+@import url(http://fonts.googleapis.com/css?family=Titillium+Web:400,700,400italic,600italic);
+
  hr {
     border-top: 1px solid #90BDA7;
 }
@@ -32,6 +34,14 @@ See: http://codex.wordpress.org/Child_Themes
 /* ==========================================================================
    General styles
    ========================================================================== */
+ body {
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+
+    -webkit-font-smoothing: antialiased;
+    -webkit-overflow-scrolling: touch;
+}
  
 .navbar-default, ::selection {
 	background-color: #00B55C;
