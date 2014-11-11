@@ -38,9 +38,13 @@ See: http://codex.wordpress.org/Child_Themes
     font-family: 'Titillium Web', sans-serif;
     font-weight: 400;
     font-size: 18px;
-
     -webkit-font-smoothing: antialiased;
     -webkit-overflow-scrolling: touch;
+    background-color: #2f2f2f;
+}
+
+#wrapper {
+    background-color: #fff;	
 }
  
 .navbar-default, ::selection {
