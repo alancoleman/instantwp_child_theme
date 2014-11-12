@@ -26,7 +26,11 @@
       <div class="row">
         <div class="col-lg-6 col-lg-offset-3">
           <?php 
-          echo '<h1>' . get_bloginfo( 'description', 'display' ) . '</h1>';
+	        if ( get_query_var('paged') !== 0 ) {
+				echo '<h1>Web Development Blog page ' . get_query_var('paged') . '</h1>';
+			} else {
+				echo '<h1>Web Development Blog </h1>';
+			}
           /*
           if( rwmb_meta( 'wtf_blog_title' ) !== '' ) { ?>
             <?php echo rwmb_meta( 'wtf_blog_title' ); ?>
@@ -45,18 +49,7 @@
   <div class="container"  itemscope itemtype="http://schema.org/Blog">
     <div class="row mt mb">
       <div class="col-lg-8 col-lg-offset-2">
-		<div id="intro-text">
         <?php
-        displaypostcontent( 1387, 1399 );
-        ?>
-        </div>
-        <?php
-        if ( get_query_var('paged') !== 0 ) {
-			echo '<h2 class="page-title">Blog page ' . get_query_var('paged') . '</h2>';
-		} else {
-			echo '<h2 class="page-title">Blog</h2>';
-		}
-        
         global $wp_query;
         if ( get_query_var('paged') ) {
           $paged = get_query_var('paged');
