@@ -104,13 +104,13 @@ a {
 	background-color:#006634;
 }
 
-#intro-text {
+.intro-content {
 	border-bottom: 5px solid #90BDA7;
 	padding:0 0 20px 0;
 	margin:0 0 40px 0;
 }
 
-#intro-text p {
+.intro-content p {
 	font-size:20px;
 }
 
