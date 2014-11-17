@@ -118,6 +118,14 @@ a {
 	text-align:left;
 }
 
+.menu-footer-navigation-container {
+	padding-left:10px;
+}
+
+.col-lg-4 {
+	padding-bottom:10px;
+}
+
 @media (max-width: 767px) {
 	.navbar-default .navbar-nav .open .dropdown-menu>li>a {
 	color: #fff;
