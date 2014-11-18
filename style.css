@@ -160,7 +160,7 @@ p {
    ========================================================================== */
 
 #blogwrap {	
-	background: url(images/train_controls.jpg) no-repeat center top;
+	background: url(images/thai_wires.jpg) no-repeat center top;
 	
     -webkit-background-size: 100%;
     -moz-background-size: 100%;
@@ -176,7 +176,7 @@ p {
 }
 
 #headerwrap {
-	background: url(images/train_controls.jpg) no-repeat center top;
+	background: url(images/thai_wires.jpg) no-repeat center top;
 
     -webkit-background-size: 100%;
     -moz-background-size: 100%;
@@ -192,7 +192,7 @@ p {
 }
 
 #aboutwrap {	
-	background: url(images/train_controls_2.jpg) no-repeat center top;
+	background: url(images/bath_town.jpg) no-repeat center top;
 
     -webkit-background-size: 100%;
     -moz-background-size: 100%;
@@ -210,7 +210,9 @@ p {
 	padding-top: 0px;
 	font-size: 40px;
 }
-#aboutwrap h1 {
-	padding-top: 10px;
-	color: #ffffff;
+#aboutwrap h1, #blogwrap h1 {
+	padding: 20px;
+	color: #00B55C;
+	background: rgb(0, 0, 0); /* Fall-back for browsers that don't support rgba */
+    background: rgba(0, 0, 0, .6);
 }
