@@ -15,16 +15,22 @@
 
 switch ( getpageurl( get_permalink() ) ) {
 	case 'about-alan-coleman':
-		$metadesc = 'Find out more about Web Developer Alan Coleman';
+		$metadesc = 'Find out more about web and application developer Alan Coleman';
 		break;
 	case 'contact-alan-coleman':
 		$metadesc = 'How to get in contact Alan Coleman, about a web development project or just to say hello';
 		break;
-	case 'portfolio':
+	case 'projects':
 		$metadesc = 'More about Alan Coleman\'s web development work and projects to date';
 		break;
-	case 'front-page-content-post':
-		$metadesc = 'Welcome to my web development site, the home of my blog and where you can find out about me and my web development work';
+	case 'services':
+		$metadesc = 'Web development and application development services Alan Coleman has to offer';
+		break;
+	case 'blog':
+		$metadesc = 'Alan Coleman\'s web development blog';
+		break;
+	default:
+		$metadesc =  'Welcome to my web development site, the home of my blog and where you can find out about me and my web development work';
 		break;
 }
 ?>
@@ -34,26 +40,22 @@ switch ( getpageurl( get_permalink() ) ) {
 <!--[if IE 8 ]>    <html class="no-js ie8" <?php language_attributes(); ?>> <![endif]-->
 <!--[if (gte IE 9)|!(IE)]><!--> <html class="no-js" <?php language_attributes(); ?>> <!--<![endif]-->
 <head>
-
+<title><?php wp_title('&#124;', true, 'right'); ?><?php bloginfo('description'); ?> - Alan Coleman</title>
 <meta charset="<?php bloginfo('charset'); ?>" />
 <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-<meta name="title" content="<?php wp_title('&#124;', true, 'right'); ?><?php bloginfo('name'); ?>" >
+<meta name="title" content="<?php wp_title('&#124;', true, 'right'); ?><?php bloginfo('description'); ?> - Alan Coleman" >
 <?php if ($metadesc) { ?>
 <meta name="description" content="<?php echo $metadesc; ?>" >
 <?php } ?>
 <meta name="copyright" content="&copy; 2014 Alan Coleman" >
 <meta name="author" content="Alan Coleman" >
 <meta name="robots" content="INDEX,FOLLOW" >
-
-<title><?php wp_title('&#124;', true, 'right'); ?><?php bloginfo('name'); ?></title>
 <?php if( bi_option('custom_favicon') !== '' ) : ?>
         <link rel="icon" type="image/png" href="<?php echo bi_option('custom_favicon', false, 'url'); ?>" />
     <?php endif; ?>
-
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
-
 <?php wp_head(); ?> 
 <script type="text/javascript">
   var _gaq = _gaq || [];
