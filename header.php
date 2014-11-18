@@ -33,7 +33,6 @@ switch ( getpageurl( get_permalink() ) ) {
 <!--[if IE 7 ]>    <html class="no-js ie7" <?php language_attributes(); ?>> <![endif]-->
 <!--[if IE 8 ]>    <html class="no-js ie8" <?php language_attributes(); ?>> <![endif]-->
 <!--[if (gte IE 9)|!(IE)]><!--> <html class="no-js" <?php language_attributes(); ?>> <!--<![endif]-->
-	<link rel="icon" href="<?php echo get_site_url(); ?>/favicon.png">
 <head>
 
 <meta charset="<?php bloginfo('charset'); ?>" />
@@ -72,7 +71,7 @@ switch ( getpageurl( get_permalink() ) ) {
     <!--[if lt IE 9]>
       <script src="<?php bloginfo('template_url'); ?>/js/respond.min.js"></script>
 <![endif]-->
-
+	<link rel="icon" href="<?php echo get_site_url(); ?>/favicon.png">
 </head>
 
 <body <?php body_class(); ?>>
