@@ -13,6 +13,12 @@
  * @link           http://codex.wordpress.org/Theme_Development#Functions_File
  * @since          available since Release 1.0
  */
+
+/*
+ * Add the hooks.php file
+ */
+require_once ( get_stylesheet_directory()  . '/hooks.php' );
+
 ?>
 <?php
 /*
@@ -116,5 +122,44 @@ if ( ! function_exists( 'gents_post_meta_post' ) ) {
 	} // End function
 	
 } // End if
+
+/*
+ *  Add Meta description tag
+*/
+function add_meta_desc() {
+	
+	$metadesc = '';
+
+	switch ( getpageurl( get_permalink() ) ) {
+		case 'about-alan-coleman':
+			$metadesc = 'Find out more about web and application developer Alan Coleman';
+			break;
+		case 'contact-alan-coleman':
+			$metadesc = 'How to get in contact Alan Coleman, about a web development project or just to say hello';
+			break;
+		case 'projects':
+			$metadesc = 'More about Alan Coleman\'s web development work and projects to date';
+			break;
+		case 'services':
+			$metadesc = 'Web development and application development services Alan Coleman has to offer';
+			break;
+		case 'blog':
+			$metadesc = 'Alan Coleman\'s web development blog';
+			break;
+		default:
+			$metadesc =  'Welcome to my web development site, the home of my blog and where you can find out about me and my web development work';
+			break;
+	}
+	
+	if ($metadesc) {
+		echo'<meta name="description" content="' . $metadesc . '">';
+	}
+}
+
+/*
+ *  Add Meta description tag function to hook
+*/
+
+add_action('ac_head_meta','add_meta_desc',1);
 
 ?>

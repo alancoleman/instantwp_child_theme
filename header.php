@@ -12,27 +12,6 @@
  * @link           http://codex.wordpress.org/Theme_Development#Document_Head_.28header.php.29
  * @since          available since Release 1.0
  */
-
-switch ( getpageurl( get_permalink() ) ) {
-	case 'about-alan-coleman':
-		$metadesc = 'Find out more about web and application developer Alan Coleman';
-		break;
-	case 'contact-alan-coleman':
-		$metadesc = 'How to get in contact Alan Coleman, about a web development project or just to say hello';
-		break;
-	case 'projects':
-		$metadesc = 'More about Alan Coleman\'s web development work and projects to date';
-		break;
-	case 'services':
-		$metadesc = 'Web development and application development services Alan Coleman has to offer';
-		break;
-	case 'blog':
-		$metadesc = 'Alan Coleman\'s web development blog';
-		break;
-	default:
-		$metadesc =  'Welcome to my web development site, the home of my blog and where you can find out about me and my web development work';
-		break;
-}
 ?>
 <!doctype html>
 <!--[if lt IE 7 ]> <html class="no-js ie6" <?php language_attributes(); ?>> <![endif]-->
@@ -45,15 +24,11 @@ switch ( getpageurl( get_permalink() ) ) {
 <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 <meta name="title" content="<?php wp_title('&#124;', true, 'right'); ?><?php bloginfo('description'); ?> - Alan Coleman" >
-<?php if ($metadesc) { ?>
-<meta name="description" content="<?php echo $metadesc; ?>" >
-<?php } ?>
+<?php ac_head_meta(); ?> 
 <meta name="copyright" content="&copy; 2014 Alan Coleman" >
 <meta name="author" content="Alan Coleman" >
 <meta name="robots" content="INDEX,FOLLOW" >
-<?php if( bi_option('custom_favicon') !== '' ) : ?>
-        <link rel="icon" type="image/png" href="<?php echo bi_option('custom_favicon', false, 'url'); ?>" />
-    <?php endif; ?>
+<link rel="icon" href="<?php echo get_site_url(); ?>/favicon.png">
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 <?php wp_head(); ?> 
@@ -68,24 +43,17 @@ switch ( getpageurl( get_permalink() ) ) {
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
   })();
 </script>
-
 <!-- Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="<?php bloginfo('template_url'); ?>/js/respond.min.js"></script>
+<!--[if lt IE 9]>
+<script src="<?php bloginfo('template_url'); ?>/js/respond.min.js"></script>
 <![endif]-->
-	<link rel="icon" href="<?php echo get_site_url(); ?>/favicon.png">
 </head>
-
 <body <?php body_class(); ?>>
 <a href="https://plus.google.com/+AlanColeman" rel="publisher"></a>                 
-<?php responsive_container(); // before container hook ?>
-
-         
-    <?php responsive_header(); // before header hook ?>
-    <header>
-   
-    <?php responsive_in_header(); // header hook ?>
-
+<?php responsive_container(); // before container hook ?>        
+<?php responsive_header(); // before header hook ?>
+<header>
+<?php responsive_in_header(); // header hook ?>
 <nav role="navigation">
     <div class="navbar navbar-default navbar-fixed-top">
         <div class="container">
@@ -109,10 +77,6 @@ switch ( getpageurl( get_permalink() ) ) {
             <a class="navbar-brand" href="<?php bloginfo( 'url' ) ?>/" title="<?php bloginfo( 'name' ) ?>" rel="homepage"><?php bloginfo( 'name' ) ?></a>
             <?php } } ?>
         </div>
-        
-
-
-
           <div class="navbar-collapse collapse navbar-right navbar-responsive-collapse">
 			   <?php
 
@@ -123,28 +87,16 @@ switch ( getpageurl( get_permalink() ) ) {
                     'menu_class'     => 'nav navbar-nav',
                     'walker'     => new Bootstrap_Walker_Nav_Menu()
                 );
-
-               
-
                 if (has_nav_menu('top-bar')) {
                        wp_nav_menu($args);
                     }
-
             ?>
-
           </div>
-
         </div>
-       
      </div>           
 </nav>
-           
- 
     </header><!-- end of header -->
-    <?php responsive_header_end(); // after header hook ?>
-    
+    <?php responsive_header_end(); // after header hook ?> 
 	<?php responsive_wrapper(); // before wrapper ?>
-
         <div id="wrapper" class="clearfix">
-    
     <?php responsive_in_wrapper(); // wrapper hook ?>
