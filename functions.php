@@ -162,4 +162,17 @@ function add_meta_desc() {
 
 add_action('ac_head_meta','add_meta_desc',1);
 
+if ( !function_exists('bi_load_google_fonts') ) {
+	
+}
+
+/*
+ * Remove action to load Google Fonts - This is removing what's been added at parent theme level
+ */
+function remove_bi_load_google_fonts() {
+	remove_action('wp_head', 'bi_load_google_fonts');
+}
+
+add_action( 'wp_head', 'remove_bi_load_google_fonts', 1 );
+
 ?>

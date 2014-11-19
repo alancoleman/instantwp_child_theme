@@ -210,9 +210,14 @@ p {
 	padding-top: 0px;
 	font-size: 40px;
 }
-#aboutwrap h1, #blogwrap h1 {
+#aboutwrap h1, #blogwrap h1, #headerwrap h1 {
 	padding: 20px;
-	color: #00B55C;
-	background: rgb(0, 0, 0); /* Fall-back for browsers that don't support rgba */
-    background: rgba(0, 0, 0, .6);
+    color: #fff;
+    background: rgb(0, 0, 0); /* Fall-back for browsers that don't support rgba */
+    background: rgba(0, 0, 0, .5) ;
+    letter-spacing:0;
+}
+
+.blog-wrap {
+	padding: 0 0 25px 0;
 }
