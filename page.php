@@ -40,42 +40,8 @@
    <div class="container">
     <div class="row mt mb">
       <div class="col-lg-8 col-lg-offset-2">
-
 <?php if (have_posts()) : ?>
-
-		<?php while (have_posts()) : the_post(); ?>
-        
-            <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-                <?php if ( comments_open() ) : ?>   
-                <!--         
-                <section class="post-meta">
-                <?php 
-                    printf( __( '<i class="icon-time"></i> %2$s <i class="icon-user"></i> %3$s', 'responsive' ),'meta-prep meta-prep-author',
-		            sprintf( '<a href="%1$s" title="%2$s" rel="bookmark">%3$s</a>',
-			            get_permalink(),
-			            esc_attr( get_the_time() ),
-			            get_the_date()
-		            ),
-		            sprintf( '<span class="author vcard"><a class="url fn n" href="%1$s" title="%2$s">%3$s</a></span>',
-			            get_author_posts_url( get_the_author_meta( 'ID' ) ),
-			        sprintf( esc_attr__( 'View all posts by %s', 'responsive' ), get_the_author() ),
-			            get_the_author()
-		                )
-			        );
-		        ?>
-				    <?php if ( comments_open() ) : ?>
-                        <span class="comments-link">
-                        <span class="mdash">&mdash;</span>
-                    <?php comments_popup_link(__('No Comments <i class="icon-arrow-down"></i>', 'responsive'), __('1 Comment <i class="icon-arrow-down"></i>', 'responsive'), __('% Comments <i class="icon-arrow-down"></i>', 'responsive')); ?>
-                        </span>
-                    <?php endif; ?> 
-                </section>
-                -->
-                <!-- end of .post-meta -->
-                <?php endif; ?> 
-
-                
-                <section class="post-entry">
+		<?php while (have_posts()) : the_post(); ?> 
                     <?php the_content(); ?>
                        <?php custom_link_pages(array(
                             'before' => '<nav class="pagination"><ul>' . __(''),
@@ -85,21 +51,7 @@
                             'previouspagelink' => __('&larr;'),
                             'pagelink' => '%',
                             'echo' => 1 )
-                            ); ?>
-                </section><!-- end of .post-entry -->
-                
-               <footer class="article-footer">
-                <?php if ( comments_open() ) : ?>
-                <div class="post-data">
-				    <?php the_tags(__('Tagged with:', 'responsive') . ' ', ', ', '<br />'); ?> 
-                    <?php the_category(__('Posted in %s', 'responsive') . ', '); ?> 
-                </div><!-- end of .post-data -->
-                <?php endif; ?>             
-            
-            <div class="post-edit"><?php edit_post_link(__('Edit', 'responsive')); ?></div> 
-        </footer>
-            </article><!-- end of #post-<?php the_ID(); ?> -->
-            
+                            ); ?>        
             <?php comments_template( '', true ); ?>
             
         <?php endwhile; ?> 
