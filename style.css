@@ -47,7 +47,11 @@ See: http://codex.wordpress.org/Child_Themes
     background-color: #fff;	
 }
  
-.navbar-default, ::selection {
+.navbar-default {
+	background-color: #00B55C;
+}
+
+::selection {
 	background-color: #00B55C;
 }
 
@@ -70,7 +74,7 @@ a {
 	color:#00B55C;
 }
 
-.navbar-default .navbar-nav > li > a:hover, a:hover, .dropdown-menu>li>a:hover, .navbar-default .navbar-brand:hover {
+.navbar-default .navbar-nav > li > a:hover, a:hover, .dropdown-menu>li>a:hover, .navbar-default .navbar-brand:hover, .navbar-default .navbar-nav .dropdown-menu > li > a:hover {
 	color:#004422;
 	text-decoration:none;
 }
@@ -91,7 +95,8 @@ a {
 	border:0;
 	border-radius:0;
 	padding:0;
-	font-size:16px;	
+	font-size:16px;
+	box-shadow:none;
 }
 
 .navbar-default .navbar-toggle .icon-bar {
@@ -106,6 +111,10 @@ a {
 
 .navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus  {
 	background-color:#006634;
+}
+
+.navbar-default .navbar-nav > li > a, .navbar-default .navbar-nav .dropdown-menu > li > a {
+	color: #ffffff;
 }
 
 .intro-content {
@@ -151,13 +160,22 @@ h1, h2, h3, h4, h5, h6, p {
     color: #003019;
 }
 
-p {
+p, ol, ul {
     line-height:1.7;
 }
 
 body blockquote {
 	font-style:italic;
 	font-size: inherit;
+}
+
+ol, ul {
+	list-style-type: decimal;
+	margin-left:50px;
+}
+
+ul {
+	list-style-type: square;
 }
 
 /* ==========================================================================
