@@ -178,6 +178,11 @@ ul {
 	list-style-type: square;
 }
 
+#footerwrap ol, #footerwrap ul {
+	list-style-type: none;
+	margin-left:0;
+}
+
 /* ==========================================================================
    Wrap Sections
    ========================================================================== */
