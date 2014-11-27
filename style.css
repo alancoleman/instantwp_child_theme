@@ -183,69 +183,51 @@ ul {
 	margin-left:0;
 }
 
+
 /* ==========================================================================
    Wrap Sections
    ========================================================================== */
 
-#blogwrap {	
-	background: url(images/bath_town.jpg) no-repeat center top;
-	
-    -webkit-background-size: 100%;
-    -moz-background-size: 100%;
-    -o-background-size: 100%;
-    background-size: 100%;
-
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    
-    min-height: 550px;
+#blogwrap, #headerwrap, #aboutwrap {	
+	background: url(none) no-repeat center top;  
+    background-color:#606060;
+    min-height: 250px;
+    margin-top: 0px;
+    padding-top: 100px;
 }
-
-#headerwrap {
-	background: url(images/bath_town.jpg) no-repeat center top;
-
-    -webkit-background-size: 100%;
-    -moz-background-size: 100%;
-    -o-background-size: 100%;
-    background-size: 100%;
-
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    
-     min-height: 550px;
-}
-
-#aboutwrap {	
-	background: url(images/bath_town.jpg) no-repeat center top;
-
-    -webkit-background-size: 100%;
-    -moz-background-size: 100%;
-    -o-background-size: 100%;
-    background-size: 100%;
-
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-}
-
 
 #aboutwrap h1, #blogwrap h1, #headerwrap h1 {
 	padding-top: 0px;
 	font-size: 40px;
 }
 #aboutwrap h1, #blogwrap h1, #headerwrap h1 {
-	padding: 20px;
+	padding: 0px;
     color: #fff;
+    /*
     background: rgb(0, 0, 0); /* Fall-back for browsers that don't support rgba */
+    /*
     background: rgba(0, 0, 0, .5) ;
+  	*/
     letter-spacing:0;
 }
 
 .blog-wrap {
 	padding: 0 0 25px 0;
+}
+
+/* This overide sets the h1 width to maximum */
+
+.col-lg-offset-3 {
+margin-left: 0%;
+}
+
+.col-lg-6 {
+width: 100%;
+}
+
+/* This overide sets the content top margin */
+
+
+.mt {
+margin-top: 60px;
 }
