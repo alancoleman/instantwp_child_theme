@@ -11,7 +11,7 @@
  * @version        Release: 3.2.0
  * @filesource     wp-content/themes/responsive/includes/functions.php
  * @link           http://codex.wordpress.org/Theme_Development#Functions_File
- * @since          available since Release 1.0
+ * @since          available since Release 1.0 
  */
 
 /*
