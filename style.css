@@ -183,6 +183,20 @@ ul {
 	margin-left:0;
 }
 
+div.adwords-call-to-action {
+	border:1px solid #606060;
+	padding: 10px;
+	font-size:140%;
+	background:#00B55C;
+}
+
+div.adwords-call-to-action a{
+	color:#fff;
+}
+div.adwords-call-to-action a:hover{
+	text-decoration:underline;
+}
+
 
 /* ==========================================================================
    Wrap Sections
